@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+@layer base {
+  :root {
+    --background: 45 40% 97%;
+    --foreground: 270 30% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 30% 15%;
+    --primary: 270 60% 35%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 45 30% 92%;
+    --secondary-foreground: 270 30% 25%;
+    --muted: 45 20% 93%;
+    --muted-foreground: 270 10% 50%;
+    --accent: 40 80% 55%;
+    --accent-foreground: 270 30% 15%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 15% 88%;
+    --input: 270 10% 90%;
+    --ring: 270 60% 35%;
+    --radius: 1rem;
+    --font-display: "Sora", sans-serif;
+    --font-sans: "Inter", sans-serif;
+  }
+  * { border-color: hsl(var(--border)); }
+  body {
+    background-color: hsl(0 0% 100%);
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
+
+@layer components {
+  .glass {
+    background: hsl(0 0% 100% / 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 8px 32px 0 hsl(270 40% 40% / 0.06);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
